@@ -10,9 +10,14 @@
 	$mysqli->set_charset("utf8");
 
 	// set some post stuff up here
-	$modelNo = $_GET["model"];	
+	$modelId = $_POST["F55,F56,R58"];
+	$modelNo = $_GET["model"];
+	$modelName = $_GET["modelName"];	
+	$modelPrice = $_GET["pricing"];
+	$modelDetails = $_GET["modelDetails"];
+	
 
-	$myQuery = "SELECT * FROM mainmodel WHERE model = '$modelNo'";
+	$myQuery = "SELECT * FROM mainmodel WHERE F55,F56,R58 = '$modelId' AND model = '$modelNo' AND modelName = '$modelName' AND pricing = '$modelPrice' AND modelDetails = '$modelDetails'";
 	$result = mysqli_query($mysqli, $myQuery);
 	$row = mysqli_fetch_assoc($result);	
 
